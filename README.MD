@@ -1,347 +1,395 @@
-## README.md: Clean Code e SOLID com Delphi 12.3 Athens
+## 🚀 Clean Code & SOLID Principles in Delphi 12.3 Athens
 
-![Delphi Version](https://img.shields.io/badge/Delphi-12.3%20Athens-blue.svg)![License](https://img.shields.io/badge/License-MIT-green.svg)![Status](https://img.shields.io/badge/Status-Educacional-brightgreen.svg)
+[![Delphi Version](https://img.shields.io/badge/Delphi-12.3%20Athens-blueviolet)](https://www.embarcadero.com/products/delphi)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![SOLID](https://img.shields.io/badge/Principles-SOLID-brightgreen.svg)](https://en.wikipedia.org/wiki/SOLID)
+[![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
 
-Um projeto de referência completo demonstrando a aplicação dos princípios **SOLID** e de **Clean Code** utilizando os recursos modernos do **Delphi 12.3 Athens**. O objetivo é fornecer um guia prático e didático para a construção de software robusto, manutenível e testável em Object Pascal.
+Repositório de exemplo demonstrando a aplicação dos princípios **SOLID** e conceitos de **Clean Code** em um projeto **Delphi 12.3 Athens**. O objetivo é fornecer um guia prático e didático para desenvolvedores Delphi que desejam escrever um código mais limpo, manutenível e testável.
 
 ---
 
 ### 📚 Tabela de Conteúdos
 
-1.  [🎯 Introdução](#-introdução)
-2.  [✨ Recursos Modernos do Delphi 12.3 para Clean Code](#-recursos-modernos-do-delphi-123-para-clean-code)
-3.  [🏗️ Arquitetura do Sistema](#️-arquitetura-do-sistema)
-    *   [Diagrama de Arquitetura em Camadas](#diagrama-de-arquitetura-em-camadas)
-    *   [Diagrama de Classes (UML)](#diagrama-de-classes-uml)
-    *   [Fluxo de Processamento de Pedidos (Sequência)](#fluxo-de-processamento-de-pedidos-sequência)
-4.  [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-5.  [⚙️ Pré-requisitos e Instalação](#️-pré-requisitos-e-instalação)
-6.  [▶️ Como Executar o Projeto](#️-como-executar-o-projeto)
-7.  [🧪 Como Executar os Testes](#-como-executar-os-testes)
-8.  [🧠 Princípios SOLID em Ação](#-princípios-solid-em-ação)
-    *   [1. Single Responsibility Principle (SRP)](#1-single-responsibility-principle-srp)
-    *   [2. Open/Closed Principle (OCP)](#2-openclosed-principle-ocp)
-    *   [3. Liskov Substitution Principle (LSP)](#3-liskov-substitution-principle-lsp)
-    *   [4. Interface Segregation Principle (ISP)](#4-interface-segregation-principle-isp)
-    *   [5. Dependency Inversion Principle (DIP)](#5-dependency-inversion-principle-dip)
-9.  [🗺️ Mindmap dos Princípios SOLID](#️-mindmap-dos-princípios-solid)
-10. [🏆 Benefícios da Arquitetura Limpa](#-benefícios-da-arquitetura-limpa)
-11. [🤝 Contribuição](#-contribuição)
-12. [📜 Licença](#-licença)
+1.  [Introdução: Por que Clean Code?](#-introdução-por-que-clean-code)
+2.  [Recursos Modernos do Delphi 12.3](#-recursos-modernos-do-delphi-123-facilitando-o-clean-code)
+3.  [Estrutura do Projeto](#-estrutura-do-projeto)
+4.  [Arquitetura do Sistema](#-arquitetura-do-sistema)
+    *   [Diagrama de Arquitetura em Camadas](#-diagrama-de-arquitetura-em-camadas)
+    *   [Diagrama de Classes UML](#-diagrama-de-classes-uml)
+    *   [Diagrama de Sequência do Processamento](#-diagrama-de-sequência-do-processamento)
+    *   [Diagrama de Injeção de Dependência](#-diagrama-de-injeção-de-dependência)
+5.  [Os 5 Princípios SOLID](#-os-5-princípios-solid)
+    *   [Mindmap dos Princípios SOLID (Corrigido)](#-mindmap-dos-princípios-solid-corrigido)
+    *   [S - Single Responsibility Principle (SRP)](#s---single-responsibility-principle-srp)
+    *   [O - Open/Closed Principle (OCP)](#o---openclosed-principle-ocp)
+    *   [L - Liskov Substitution Principle (LSP)](#l---liskov-substitution-principle-lsp)
+    *   [I - Interface Segregation Principle (ISP)](#i---interface-segregation-principle-isp)
+    *   [D - Dependency Inversion Principle (DIP)](#d---dependency-inversion-principle-dip)
+6.  [Pré-requisitos](#-pré-requisitos)
+7.  [Instalação e Configuração](#-instalação-e-configuração)
+8.  [Como Executar o Projeto](#-como-executar-o-projeto)
+9.  [Como Executar os Testes](#-como-executar-os-testes)
+10. [Benefícios da Arquitetura Limpa](#-benefícios-da-arquitetura-limpa)
+11. [Como Contribuir](#-como-contribuir)
+12. [Licença](#-licença)
+13. [Links Úteis e Referências](#-links-úteis-e-referências)
 
 ---
 
-### 🎯 Introdução
+### 🎯 Introdução: Por que Clean Code?
 
-Este projeto implementa um sistema simples de processamento de pedidos como um estudo de caso para aplicar os cinco princípios SOLID. Ele foi desenvolvido e otimizado para **Delphi 12.3 Athens**, aproveitando seus recursos mais recentes para escrever um código mais limpo, expressivo e eficiente. Cada princípio é demonstrado com exemplos práticos de "antes" (ruim) e "depois" (bom), facilitando o entendimento dos conceitos.
+Código limpo é um código que pode ser lido, entendido e modificado por qualquer desenvolvedor com facilidade. Ele é organizado, segue convenções e é construído sobre uma arquitetura sólida. Os princípios SOLID são a base para alcançar essa arquitetura. Este projeto materializa esses conceitos em um cenário prático: um serviço de processamento de pedidos.
 
-### ✨ Recursos Modernos do Delphi 12.3 para Clean Code
+### ✨ Recursos Modernos do Delphi 12.3 Facilitando o Clean Code
 
-O Delphi 12.3 Athens introduz e aprimora recursos que facilitam a escrita de código limpo e moderno. Este projeto os utiliza para:
+O Delphi 12.3 Athens introduz e aprimora recursos que tornam a escrita de código limpo mais natural:
 
-*   **Inferência de Tipo com `var`**: Reduz a verbosidade na declaração de variáveis locais, tornando o código mais legível.
+*   **Inferência de Tipo com `var`**: Reduz a verbosidade na declaração de variáveis.
     ```pascal
-    var Validator: IOrderValidator := TOrderValidator.Create; // Clássico
-    var Validator := TOrderValidator.Create; // Moderno com inferência
+    var Validator := TOrderValidator.Create; // O compilador infere o tipo
     ```
-*   **Variáveis Inline**: Permite declarar variáveis no exato local onde são usadas pela primeira vez, melhorando a localidade de referência e a clareza do escopo.
+*   **Variáveis Inline**: Permite declarar variáveis no ponto de uso, melhorando a localidade e a legibilidade.
     ```pascal
-    if AOrder.IsValid(var ValidationMessage: string) then // Declaração inline
-    begin
+    if AOrder.IsValid(var ValidationMessage: string) then
       // Usa ValidationMessage aqui
-    end;
     ```
-*   **Managed Records**: `record`s com inicialização, finalização e cópia customizadas permitem criar tipos de dados imutáveis ou com comportamento complexo sem o overhead de uma `class`, ideal para Entidades e DTOs.
-*   **Melhorias na Sintaxe**: Pequenos aprimoramentos, como números binários e separadores em literais numéricos (`1_000_000`), contribuem para um código mais expressivo.
+*   **Managed Records**: Perfeitos para DTOs (Data Transfer Objects) e Entidades, pois gerenciam seu próprio ciclo de vida, evitando vazamentos de memória e simplificando o código.
+*   **Melhorias na Sintaxe**: Pequenas melhorias que tornam o código mais expressivo e menos propenso a erros.
 
----
+### 📁 Estrutura do Projeto
 
-### 🏗️ Arquitetura do Sistema
+A estrutura de pastas foi organizada para separar claramente as responsabilidades, facilitando a navegação e a manutenção.
 
-A arquitetura foi projetada para ser desacoplada e testável, seguindo uma abordagem de Camadas e Clean Architecture. As dependências sempre apontam para dentro, em direção às abstrações, nunca para implementações concretas.
+```
+/
+├── CleanCodeDelphi.dpr
+├── CleanCodeDelphi.dproj
+├── README.md
+└── src/
+    ├── entities/
+    │   └── OrderEntities.pas       // Contém TOrder e TOrderItem
+    ├── exceptions/
+    │   └── CustomExceptions.pas    // Exceções customizadas como EOrderValidationException
+    ├── interfaces/
+    │   └── OrderInterfaces.pas     // Contém todas as interfaces (IOrder*, etc.)
+    ├── mocks/
+    │   ├── MockNotificationService.pas // Implementação falsa para testes
+    │   └── MockOrderRepository.pas   // Implementação falsa para testes
+    ├── services/
+    │   ├── OrderCalculator.pas     // Implementação de IOrderCalculator
+    │   ├── OrderService.pas        // Orquestrador principal (TOrderService)
+    │   └── OrderValidator.pas      // Implementação de IOrderValidator
+    └── tests/
+        └── TestOrderService.pas    // Testes unitários para TOrderService
+```
 
-#### Diagrama de Arquitetura em Camadas
+### 🏛️ Arquitetura do Sistema
 
-Este diagrama mostra como as camadas se comunicam. As camadas superiores (como a Aplicação) dependem apenas de interfaces definidas nas camadas inferiores, e a Injeção de Dependência fornece as implementações concretas em tempo de execução.
+A arquitetura é projetada em torno da Inversão de Dependência, permitindo baixo acoplamento e alta coesão.
+
+#### 🏗️ Diagrama de Arquitetura em Camadas
+
+Este diagrama mostra como as dependências fluem apenas em uma direção, das camadas superiores para as inferiores, sempre dependendo de abstrações.
 
 ```mermaid
 graph TD
-    subgraph "Apresentação (UI)"
-        A[Console App / DUnitX Tests]
+    subgraph A[Apresentação]
+        direction LR
+        ConsoleApp(Console App)
     end
 
-    subgraph "Orquestração (Application)"
-        B(TOrderService)
+    subgraph B[Serviços/Orquestração]
+        direction LR
+        OrderService(TOrderService)
     end
 
-    subgraph "Abstrações (Interfaces)"
-        C{IOrderValidator}
-        D{IOrderCalculator}
-        E{IOrderRepository}
-        F{INotificationService}
+    subgraph C[Abstrações (Interfaces)]
+        direction LR
+        IOrderValidator(IOrderValidator)
+        IOrderCalculator(IOrderCalculator)
+        IOrderRepository(IOrderRepository)
+        IOrderNotifier(IOrderNotifier)
     end
 
-    subgraph "Domínio"
-        G[Entidades: TOrder, TOrderItem]
-        H[Exceções: EOrderValidationException]
+    subgraph D[Domínio]
+        direction LR
+        Entities(TOrder, TOrderItem)
     end
 
-    subgraph "Infraestrutura (Implementações)"
-        I[TOrderValidator]
-        J[TOrderCalculator]
-        K[TMockOrderRepository]
-        L[TMockNotificationService]
+    subgraph E[Infraestrutura/Implementações]
+        direction LR
+        ValidatorImpl(TOrderValidator)
+        CalculatorImpl(TOrderCalculator)
+        RepositoryImpl(TMockOrderRepository)
+        NotifierImpl(TMockNotificationService)
     end
 
-    A --> B
-    B --> C
-    B --> D
-    B --> E
-    B --> F
-    B --> G
-    C --> G
-    D --> G
+    ConsoleApp --> OrderService
+    OrderService --> IOrderValidator
+    OrderService --> IOrderCalculator
+    OrderService --> IOrderRepository
+    OrderService --> IOrderNotifier
 
-    I -- implements --> C
-    J -- implements --> D
-    K -- implements --> E
-    L -- implements --> F
+    IOrderValidator -.-> ValidatorImpl
+    IOrderCalculator -.-> CalculatorImpl
+    IOrderRepository -.-> RepositoryImpl
+    IOrderNotifier -.-> NotifierImpl
+
+    OrderService --> Entities
+    ValidatorImpl --> Entities
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    classDef layer fill:#E6E6FA,stroke:#9370DB,stroke-width:2px;
+    class A,B,C,D,E layer;
 ```
 
-#### Diagrama de Classes (UML)
+#### 🔗 Diagrama de Classes UML
 
-Este diagrama UML simplificado ilustra a relação entre as interfaces e suas implementações, destacando os princípios ISP e DIP.
+Este diagrama ilustra as relações entre as interfaces e suas implementações concretas e mocks.
 
 ```mermaid
 classDiagram
     direction LR
 
+    class IOrderValidator {
+        <<interface>>
+        +IsValid(order: TOrder): Boolean
+    }
+    class IOrderCalculator {
+        <<interface>>
+        +CalculateTotal(order: TOrder): Currency
+    }
     class IOrderRepository {
-        <<Interface>>
-        +Save(order: TOrder)
+        <<interface>>
+        +Save(order: TOrder): Integer
+    }
+    class IOrderNotifier {
+        <<interface>>
+        +Notify(orderId: Integer; message: string)
     }
 
-    class INotificationService {
-        <<Interface>>
-        +SendConfirmation(order: TOrder)
+    class TOrderValidator {
+        +IsValid(order: TOrder): Boolean
     }
-
+    class TOrderCalculator {
+        +CalculateTotal(order: TOrder): Currency
+    }
     class TMockOrderRepository {
-        +Save(order: TOrder)
+        +Save(order: TOrder): Integer
+    }
+    class TMockNotificationService {
+        +Notify(orderId: Integer; message: string)
     }
 
-    class TMockNotificationService {
-        +SendConfirmation(order: TOrder)
-    }
+    TOrderValidator ..|> IOrderValidator : implements
+    TOrderCalculator ..|> IOrderCalculator : implements
+    TMockOrderRepository ..|> IOrderRepository : implements
+    TMockNotificationService ..|> IOrderNotifier : implements
+
+    TOrderService o-- "1" IOrderValidator
+    TOrderService o-- "1" IOrderCalculator
+    TOrderService o-- "1" IOrderRepository
+    TOrderService o-- "1" IOrderNotifier
 
     class TOrderService {
-        -FRepository: IOrderRepository
-        -FNotifier: INotificationService
-        +ProcessOrder(order: TOrder)
+        - FValidator: IOrderValidator
+        - FCalculator: IOrderCalculator
+        - FRepository: IOrderRepository
+        - FNotifier: IOrderNotifier
+        + ProcessOrder(order: TOrder): Integer
     }
-
-    TMockOrderRepository ..|> IOrderRepository : implements
-    TMockNotificationService ..|> INotificationService : implements
-    TOrderService o-- "1" IOrderRepository : depends on
-    TOrderService o-- "1" INotificationService : depends on
 ```
 
-#### Fluxo de Processamento de Pedidos (Sequência)
+#### ⚡ Diagrama de Sequência do Processamento
 
-Mostra a interação entre os objetos durante a execução do método `ProcessOrder`.
+Mostra o fluxo de chamadas quando `TOrderService.ProcessOrder` é executado.
 
 ```mermaid
 sequenceDiagram
-    participant App as Aplicação
+    participant ConsoleApp
     participant Service as TOrderService
     participant Validator as IOrderValidator
     participant Calculator as IOrderCalculator
     participant Repo as IOrderRepository
-    participant Notifier as INotificationService
+    participant Notifier as IOrderNotifier
 
-    App->>Service: ProcessOrder(Order)
-    activate Service
-    Service->>Validator: Validate(Order)
-    activate Validator
-    Validator-->>Service: (Success)
-    deactivate Validator
+    ConsoleApp ->>+ Service: ProcessOrder(order)
+    Service ->>+ Validator: IsValid(order)
+    Validator-->>- Service: true
+    Service ->>+ Calculator: CalculateTotal(order)
+    Calculator-->>- Service: totalAmount
+    Service ->>+ Repo: Save(order)
+    Repo-->>- Service: newOrderId
+    Service ->>+ Notifier: Notify(newOrderId, 'Pedido Salvo')
+    Notifier-->>- Service:
+    Service-->>- ConsoleApp: newOrderId
+```
 
-    Service->>Calculator: CalculateTotals(Order)
-    activate Calculator
-    Calculator-->>Service: (Totals Calculated)
-    deactivate Calculator
+#### 🔄 Diagrama de Injeção de Dependência
 
-    Service->>Repo: Save(Order)
-    activate Repo
-    Repo-->>Service: (Saved)
-    deactivate Repo
+Ilustra como as dependências são "injetadas" no `TOrderService` através do construtor.
 
-    Service->>Notifier: SendConfirmation(Order)
-    activate Notifier
-    Notifier-->>Service: (Sent)
-    deactivate Notifier
+```mermaid
+graph TD
+    subgraph CompositionRoot [Ponto de Criação (Main)]
+        Validator(TOrderValidator)
+        Calculator(TOrderCalculator)
+        Repository(TMockOrderRepository)
+        Notifier(TMockNotificationService)
+    end
 
-    Service-->>App: (Order Processed)
-    deactivate Service
+    subgraph ServiceLayer [Camada de Serviço]
+        OrderService("TOrderService.Create(...)")
+    end
+
+    Validator --> OrderService
+    Calculator --> OrderService
+    Repository --> OrderService
+    Notifier --> OrderService
+
+    OrderService -->|usa| IValidator(IOrderValidator)
+    OrderService -->|usa| ICalculator(IOrderCalculator)
+    OrderService -->|usa| IRepository(IOrderRepository)
+    OrderService -->|usa| INotifier(IOrderNotifier)
+
+    classDef dep fill:#D4F8E8,stroke:#006400;
+    class Validator,Calculator,Repository,Notifier dep;
 ```
 
 ---
 
-### 📂 Estrutura do Projeto
+### 🧠 Os 5 Princípios SOLID
 
-A estrutura de pastas organiza o projeto por responsabilidades, facilitando a localização e manutenção do código.
+SOLID é um acrônimo para cinco princípios de design que visam tornar o software mais compreensível, flexível e manutenível.
 
+#### ⭐ Mindmap dos Princípios SOLID (Corrigido)
+
+Este mindmap visual resume os cinco princípios, seus conceitos e benefícios.
+
+```mermaid
+mindmap
+  root((SOLID Principles))
+    S(Single Responsibility)
+      "Um módulo, uma razão para mudar"
+      Benefícios
+        "Menor acoplamento"
+        "Maior coesão"
+      Exemplo
+        "TOrderValidator só valida"
+        "TOrderCalculator só calcula"
+      Violação
+        "Classe que busca, valida e salva dados"
+    O(Open/Closed)
+      "Aberto para extensão,"
+      "fechado para modificação"
+      Benefícios
+        "Estabilidade do código"
+        "Novas features sem quebrar o existente"
+      Exemplo
+        "Adicionar novo `ICalculator` sem"
+        "mudar `TOrderService`"
+      Violação
+        "`case` ou `if/else` gigante"
+        "para tratar subtipos"
+    L(Liskov Substitution)
+      "Subtipos devem ser substituíveis"
+      "por seus tipos base"
+      Benefícios
+        "Hierarquias de classes confiáveis"
+        "Polimorfismo seguro"
+      Exemplo
+        "Qualquer `IOrderRepository` (real ou mock)"
+        "funciona com `TOrderService`"
+      Violação
+        "Método da classe filha que"
+        "lança `NotImplemented`"
+    I(Interface Segregation)
+      "Muitas interfaces específicas"
+      "são melhores que uma geral"
+      Benefícios
+        "Clientes não dependem de métodos que não usam"
+        "Reduz acoplamento"
+      Exemplo
+        "`IOrderNotifier` e `IOrderRepository`"
+        "são interfaces separadas"
+      Violação
+        "Classe que implementa interface"
+        "e lança exceções para métodos não usados"
+    D(Dependency Inversion)
+      "Módulos de alto nível não devem depender"
+      "de baixo nível. Ambos dependem de abstrações."
+      Benefícios
+        "Inversão de Controle (IoC)"
+        "Facilita testes e mocks"
+      Exemplo
+        "`TOrderService` depende de `IOrderRepository`,"
+        "não de `TMockOrderRepository`"
+      Violação
+        "Classe de serviço instanciando"
+        "uma classe de acesso a dados (`TFDQuery`)"
+        "diretamente dentro de um método"
 ```
-CleanCodeDelphi/
-├── CleanCodeDelphi.dpr         // Arquivo principal do projeto (Console)
-├── src/
-│   ├── entities/
-│   │   └── OrderEntities.pas   // Entidades de domínio (TOrder)
-│   ├── interfaces/
-│   │   └── OrderInterfaces.pas // Todas as interfaces (IOrderValidator, etc.)
-│   ├── exceptions/
-│   │   └── CustomExceptions.pas// Exceções customizadas
-│   ├── services/
-│   │   ├── OrderValidator.pas  // Implementação da validação (SRP)
-│   │   ├── OrderCalculator.pas // Implementação do cálculo (SRP)
-│   │   └── OrderService.pas    // Orquestrador principal (DIP)
-│   └── mocks/
-│       ├── MockOrderRepository.pas // Implementação mock de repositório
-│       └── MockNotificationService.pas // Implementação mock de notificação
-├── tests/
-│   └── TestOrderService.pas    // Testes unitários com DUnitX
-└── examples/
-    └── SOLIDExamples.pas       // Arquivo didático com exemplos de SOLID
-```
 
----
+#### S - Single Responsibility Principle (SRP)
 
-### ⚙️ Pré-requisitos e Instalação
+> Uma classe deve ter apenas uma razão para mudar.
 
-*   **IDE**: **Embarcadero Delphi 12.3 Athens** ou superior.
-*   **Dependências**:
-    *   **DUnitX**: Para execução dos testes unitários.
-        *   Instale facilmente via **GetIt Package Manager** no Delphi.
+*   **Aplicação**: `TOrderValidator` tem a única responsabilidade de validar um pedido. `TOrderCalculator` tem a única responsabilidade de calcular o total. `TOrderService` orquestra o processo, mas não conhece os detalhes da validação ou do cálculo.
 
-**Passos para Configuração:**
-
-1.  Clone o repositório: `git clone https://...`
-2.  Abra o Delphi 12.3 Athens.
-3.  Vá em `Tools > GetIt Package Manager`.
-4.  Procure por `DUnitX` e clique em `Install`.
-5.  Abra o arquivo de grupo de projeto (`.groupproj`) ou o projeto principal (`CleanCodeDelphi.dpr`).
-6.  No `Project Manager`, clique com o botão direito em `CleanCodeDelphi.exe` e selecione `Build`.
-
----
-
-### ▶️ Como Executar o Projeto
-
-1.  Compile o projeto `CleanCodeDelphi.dpr`.
-2.  Execute o `CleanCodeDelphi.exe` gerado.
-3.  O console exibirá o resultado do processamento de um pedido de exemplo, mostrando cada etapa (validação, cálculo, salvamento, notificação).
-
-### 🧪 Como Executar os Testes
-
-1.  No `Project Manager`, clique com o botão direito no projeto `TestOrderService.dpr`.
-2.  Selecione **`Run`**.
-3.  O DUnitX executará os testes e exibirá os resultados em uma janela ou no console, validando o comportamento do `TOrderService` de forma isolada com o uso de mocks.
-
----
-
-### 🧠 Princípios SOLID em Ação
-
-#### 1. Single Responsibility Principle (SRP)
-*Uma classe deve ter um, e apenas um, motivo para mudar.*
-
-*   **Problema**: Uma classe `TOrderProcessor` que valida, calcula, salva e notifica. Mudar a lógica de notificação exige alterar uma classe que também lida com regras de negócio e acesso a dados.
-*   **Solução**: Separamos as responsabilidades em classes distintas:
-    *   `TOrderValidator`: Apenas valida o pedido.
-    *   `TOrderCalculator`: Apenas calcula os totais.
-    *   `TOrderService`: Orquestra o fluxo, delegando tarefas para as outras classes.
-
-**Exemplo de Código (`OrderService.pas`):**
 ```pascal
-// TOrderService apenas orquestra, delegando responsabilidades.
-procedure TOrderService.ProcessOrder(const AOrder: TOrder);
-begin
-  FValidator.Validate(AOrder);
-  FCalculator.CalculateTotals(AOrder);
-  FRepository.Save(AOrder);
-  FNotifier.SendConfirmation(AOrder);
-end;
+// Em OrderValidator.pas
+type
+  TOrderValidator = class(TInterfacedObject, IOrderValidator)
+  public
+    function IsValid(const AOrder: TOrder): Boolean;
+  end;
+
+// Em OrderCalculator.pas
+type
+  TOrderCalculator = class(TInterfacedObject, IOrderCalculator)
+  public
+    function CalculateTotal(const AOrder: TOrder): Currency;
+  end;
 ```
 
-#### 2. Open/Closed Principle (OCP)
-*Objetos ou entidades devem estar abertos para extensão, mas fechados para modificação.*
+#### O - Open/Closed Principle (OCP)
 
-*   **Problema**: Se um `TDiscountCalculator` tem um `case` ou `if/else` para diferentes tipos de desconto, adicionar um novo desconto exige modificar seu código.
-*   **Solução**: Criamos uma interface `IDiscountStrategy` e diferentes classes que a implementam. Para um novo desconto, basta criar uma nova classe sem alterar o código existente.
+> Entidades de software devem ser abertas para extensão, mas fechadas para modificação.
 
-**Exemplo de Código (`SOLIDExamples.pas`):**
+*   **Aplicação**: Se precisarmos de uma nova regra de cálculo (ex: para clientes premium), podemos criar uma nova classe `TPremiumOrderCalculator` que implementa `IOrderCalculator` e injetá-la no `TOrderService` sem alterar uma linha de código do `TOrderService`.
+
+#### L - Liskov Substitution Principle (LSP)
+
+> Subtipos devem ser substituíveis por seus tipos base sem alterar a corretude do programa.
+
+*   **Aplicação**: `TOrderService` funciona com qualquer classe que implemente `IOrderRepository`. Podemos passar uma `TMockOrderRepository` (para testes) ou uma `TDatabaseOrderRepository` (para produção) e o serviço funcionará da mesma forma.
+
 ```pascal
-// Aberto para extensão: adicione novas classes de desconto.
-// Fechado para modificação: não mexa no TFinalPriceCalculator.
-TPercentageDiscount = class(TInterfacedObject, IDiscountStrategy)
-  function Calculate(APrice: Double): Double;
-end;
+// Em TestOrderService.pas (usando o mock)
+FOrderService := TOrderService.Create(FValidator, FCalculator, TMockOrderRepository.Create, FNotifier);
 
-TFixedValueDiscount = class(TInterfacedObject, IDiscountStrategy)
-  function Calculate(APrice: Double): Double;
-end;
+// Em CleanCodeDelphi.dpr (usando uma implementação real, se existisse)
+var OrderService := TOrderService.Create(Validator, Calculator, TDatabaseOrderRepository.Create, Notifier);
 ```
 
-#### 3. Liskov Substitution Principle (LSP)
-*Subtipos devem ser substituíveis por seus tipos base sem alterar a corretude do programa.*
+#### I - Interface Segregation Principle (ISP)
 
-*   **Problema**: Uma classe `Bird` tem um método `Fly`. A subclasse `Penguin` herda de `Bird`, mas não pode voar. Lançar uma exceção no método `Fly` do `Penguin` viola o LSP.
-*   **Solução**: Criar hierarquias mais corretas, como uma classe base `Bird` e subclasses `FlyingBird` e `NonFlyingBird`, onde apenas `FlyingBird` possui o método `Fly`.
+> Clientes não devem ser forçados a depender de interfaces que não usam.
 
-**Exemplo de Código (`SOLIDExamples.pas`):**
+*   **Aplicação**: Em vez de uma única interface `IOrderManager` com métodos `Validate`, `Calculate`, `Save` e `Notify`, criamos quatro interfaces distintas (`IOrderValidator`, `IOrderCalculator`, `IOrderRepository`, `IOrderNotifier`). Isso permite que as classes implementem apenas o que precisam.
+
+#### D - Dependency Inversion Principle (DIP)
+
+> Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.
+
+*   **Aplicação**: Este é o princípio central da nossa arquitetura. `TOrderService` (alto nível) não depende diretamente de `TOrderValidator` ou `TMockOrderRepository` (baixo nível). Ele depende das abstrações `IOrderValidator` e `IOrderRepository`. As implementações concretas são "injetadas" de fora.
+
 ```pascal
-// Correto: O subtipo TReadOnlyFile pode substituir TFile sem quebrar o programa.
-// Ambos podem ser lidos. Apenas TWritableFile pode ser escrito.
-var
-  LFile: TFile := TWritableFile.Create('notes.txt');
-  LData := LFile.Read; // Funciona
-
-LFile := TReadOnlyFile.Create('config.ini');
-LData := LFile.Read; // Também funciona. O programa é correto.
-```
-
-#### 4. Interface Segregation Principle (ISP)
-*Muitas interfaces específicas são melhores do que uma única interface geral.*
-
-*   **Problema**: Uma interface "gorda" `IWorker` com métodos `Work` e `Eat`. Uma classe `TRobotWorker` é forçada a implementar `Eat`, o que não faz sentido.
-*   **Solução**: Quebramos a interface em duas: `IWorkable` e `IEatable`. As classes implementam apenas as interfaces que fazem sentido para elas.
-
-**Exemplo de Código (`OrderInterfaces.pas`):**
-```pascal
-// Interfaces segregadas e específicas.
-IOrderValidator = interface
-  ['{GUID}']
-  procedure Validate(const AOrder: TOrder);
-end;
-
-IOrderCalculator = interface
-  ['{GUID}']
-  procedure CalculateTotals(const AOrder: TOrder);
-end;
-```
-
-#### 5. Dependency Inversion Principle (DIP)
-*Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.*
-
-*   **Problema**: `TOrderService` cria instâncias concretas de `TOrderValidator` e `TMockOrderRepository`. Isso acopla o serviço a implementações específicas, dificultando testes e trocas.
-*   **Solução**: `TOrderService` passa a depender de interfaces (`IOrderValidator`, `IOrderRepository`). As instâncias concretas são "injetadas" via construtor (Injeção de Dependência).
-
-**Exemplo de Código (`OrderService.pas`):**
-```pascal
-// TOrderService depende de abstrações (interfaces), não de classes concretas.
-constructor TOrderService.Create(
-  const AValidator: IOrderValidator;
-  const ACalculator: IOrderCalculator;
-  const ARepository: IOrderRepository;
-  const ANotifier: INotificationService);
+// Construtor do TOrderService
+constructor TOrderService.Create(const AValidator: IOrderValidator;
+  const ACalculator: IOrderCalculator; const ARepository: IOrderRepository;
+  const ANotifier: IOrderNotifier);
 begin
   FValidator := AValidator;
   FCalculator := ACalculator;
@@ -352,58 +400,63 @@ end;
 
 ---
 
-### 🗺️ Mindmap dos Princípios SOLID
+### 🔧 Pré-requisitos
 
-Este mapa mental resume os cinco princípios, seus objetivos e benefícios.
+*   **Embarcadero Delphi 12.3 Athens** (ou superior).
+*   **Test DUnitX Framework**: Usado para os testes unitários. Pode ser instalado via **GetIt Package Manager**.
 
-```mermaid
-mindmap
-  root((Clean Code))
-    **SOLID**
-      **S: Single Responsibility**
-        ::icon(1)
-        Conceito: Uma classe, um motivo para mudar.
-        Benefício: Alta coesão, baixo acoplamento.
-        Exemplo: TOrderValidator vs TOrderCalculator.
-      **O: Open/Closed**
-        ::icon(2)
-        Conceito: Aberto para extensão, fechado para modificação.
-        Benefício: Estabilidade, menos bugs em código existente.
-        Exemplo: Estratégias de desconto com interfaces.
-      **L: Liskov Substitution**
-        ::icon(3)
-        Conceito: Subtipos devem ser substituíveis por tipos base.
-        Benefício: Hierarquias confiáveis, polimorfismo seguro.
-        Exemplo: Hierarquia de Aves (voadoras e não voadoras).
-      **I: Interface Segregation**
-        ::icon(4)
-        Conceito: Interfaces pequenas e específicas.
-        Benefício: Evita classes com métodos "vazios".
-        Exemplo: IOrderValidator, IOrderCalculator em vez de IOrderManager.
-      **D: Dependency Inversion**
-        ::icon(5)
-        Conceito: Depender de abstrações, não de implementações.
-        Benefício: Desacoplamento, testabilidade.
-        Exemplo: TOrderService recebendo interfaces via construtor.
-```
+### ⚙️ Instalação e Configuração
 
----
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/CleanCodeDelphi.git
+    ```
+2.  **Abra o Delphi 12.3**.
+3.  **Instale o DUnitX**:
+    *   Vá em `Tools > GetIt Package Manager`.
+    *   Procure por `DUnitX`.
+    *   Clique em `Install`.
+4.  **Abra o projeto**:
+    *   Vá em `File > Open Project...`.
+    *   Navegue até a pasta clonada e abra o arquivo `CleanCodeDelphi.dproj`.
+5.  **Compile o projeto**: Pressione `Ctrl + F9` para garantir que todas as dependências estão corretas.
+
+### ▶️ Como Executar o Projeto
+
+1.  Abra o arquivo `CleanCodeDelphi.dpr`.
+2.  Pressione `F9` ou clique em `Run > Run`.
+3.  O console irá exibir a saída do processamento do pedido de exemplo.
+
+### ✅ Como Executar os Testes
+
+1.  No `Project Manager`, clique com o botão direito em `TestOrderService.exe`.
+2.  Selecione `Run`.
+3.  O console do DUnitX será exibido com os resultados dos testes. Todos os testes devem passar.
 
 ### 🏆 Benefícios da Arquitetura Limpa
 
 *   **Manutenibilidade**: Código fácil de entender e modificar.
-*   **Testabilidade**: Unidades de código podem ser testadas de forma isolada (unit tests).
-*   **Flexibilidade**: Trocar um serviço de e-mail por um de SMS, ou um banco de dados SQL por um NoSQL, torna-se uma tarefa simples.
-*   **Escalabilidade**: A estrutura modular facilita a adição de novas funcionalidades sem impactar as existentes.
+*   **Testabilidade**: A Injeção de Dependência permite mockar componentes para testes unitários isolados.
+*   **Flexibilidade**: Novas funcionalidades podem ser adicionadas com impacto mínimo no código existente.
+*   **Reusabilidade**: Componentes desacoplados podem ser reutilizados em outros projetos.
+*   **Escalabilidade**: A arquitetura suporta o crescimento do projeto de forma organizada.
 
----
+### 🤝 Como Contribuir
 
-### 🤝 Contribuição
+Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou encontrar um bug:
 
-Contribuições são bem-vindas! Se você encontrar um bug, tiver uma sugestão de melhoria ou quiser adicionar um novo exemplo, por favor, abra uma *issue* ou envie um *pull request*.
-
----
+1.  Faça um **Fork** do projeto.
+2.  Crie uma nova **Branch** (`git checkout -b feature/sua-feature`).
+3.  Faça o **Commit** das suas alterações (`git commit -m 'Adiciona nova feature'`).
+4.  Faça o **Push** para a Branch (`git push origin feature/sua-feature`).
+5.  Abra um **Pull Request**.
 
 ### 📜 Licença
 
-Este projeto está licenciado sob a **Licença MIT**. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+### 🔗 Links Úteis e Referências
+
+*   **Clean Code: A Handbook of Agile Software Craftsmanship** - Robert C. Martin
+*   **Documentação do Delphi 12 Athens** - Embarcadero
+*   **Refactoring Guru** - Padrões de Projeto e Princípios SOLID
